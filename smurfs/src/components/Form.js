@@ -22,7 +22,7 @@ const Form = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    giveSmurf(formState)
+    props.giveSmurf(formState)
     setFormState({
       name: '',
       age: '',
@@ -38,21 +38,21 @@ const Form = props => {
         name = 'name'
         placeholder = 'Smurfs Name'
         value={formState.name}
-        onChange={onChange}
+        onChange={ onChange }
       />
       <input 
         type ='text'
         name = 'age'
         placeholder = 'Smurfs Age'
         value={formState.age}
-        onChange={onChange}
+        onChange={ onChange }
       />
       <input 
         type ='text'
         name = 'height'
         placeholder = 'Smurfs Height'
         value={formState.height}
-        onChange={onChange}
+        onChange={ onChange }
       />
       <button type='submit'>Add Smurf</button>
     </form>

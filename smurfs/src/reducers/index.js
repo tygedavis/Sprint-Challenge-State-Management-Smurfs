@@ -6,7 +6,7 @@ import {
 } from '../actions';
 
 const initialState = {
-  smurf: null,
+  smurf: '',
   err: ''
 }
 
@@ -30,7 +30,7 @@ export const reducer = (state = initialState, action) => {
       case POST_SMURF_SUCCESS:
         return {
           ...state,
-          smurf: [...state.smurf, action.payload]
+          smurf: [action.payload]
         }
     default:
       return state

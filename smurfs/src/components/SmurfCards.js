@@ -15,7 +15,7 @@ const SmurfCards = props => {
   return (
     <div>
       <button onClick={props.getSmurf}>See your village</button>
-      {props.smurf && props.smurf.map((item) => {
+      {props.smurf.length && props.smurf.map((item) => {
         return (
           <>
             <SmurfCard key={props.smurf.id} smurf={item}/>
