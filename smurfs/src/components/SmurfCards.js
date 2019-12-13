@@ -17,7 +17,6 @@ const SmurfCards = props => {
   // console.log('Props on SmurfCard(s)', props)
   return (
     <div>
-      <button onClick={props.getSmurf}>See your village</button>
       {props.smurf && props.smurf.map((item) => {
         return (
           <>
