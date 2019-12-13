@@ -2,9 +2,18 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-const Form = () => {
+import { giveSmurf } from '../actions';
+
+const Form = props => {
+  console.log('Props on Form: ', props)
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    giveSmurf()
+  }
+
   return (
-    <form>
+    <form onSubmit={ handleSubmit }>
       <h4>Add a Smurf to your village</h4>
       <input 
         type ='text'
@@ -28,10 +37,9 @@ const Form = () => {
 
 const mapStateToProps = state => {
   return {
-    name: state.name,
-    age: state.age,
-    height: state.height
+    smurf: state.smurf,
+    error: state.error
   }
 }
 
-export default connect(mapStateToProps, {})(Form);
+export default connect(mapStateToProps, { giveSmurf })(Form);

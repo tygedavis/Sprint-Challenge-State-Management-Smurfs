@@ -10,8 +10,8 @@ class App extends Component {
     return (
       <div className="App">
       <h1>Your Smurf Village!</h1>
-        <Form />
         <SmurfCards />
+        {/* <Form /> */}
       </div>
     );
   }
