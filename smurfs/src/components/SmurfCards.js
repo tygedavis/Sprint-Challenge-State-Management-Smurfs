@@ -19,10 +19,10 @@ const SmurfCards = props => {
         return (
           <>
             <SmurfCard key={props.smurf.id} smurf={item}/>
-            <Form />
           </>
           )
       })}
+      <Form />
     </div>
   )
 };

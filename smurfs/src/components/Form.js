@@ -1,15 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { connect } from 'react-redux';
 
 import { giveSmurf } from '../actions';
 
 const Form = props => {
-  console.log('Props on Form: ', props)
+  // console.log('Props on Form: ', props)
+
+  const [formState, setFormState] = useState({
+    name: '',
+    age: '',
+    height: ''
+  })
+
+  const onChange = e => {
+    setFormState({ 
+      ...formState,
+      [e.target.name]: e.target.value
+    })
+  }
 
   const handleSubmit = e => {
     e.preventDefault();
-    giveSmurf()
+    giveSmurf(formState)
+    setFormState({
+      name: '',
+      age: '',
+      height: ''
+    })
   }
 
   return (
@@ -19,16 +37,22 @@ const Form = props => {
         type ='text'
         name = 'name'
         placeholder = 'Smurfs Name'
+        value={formState.name}
+        onChange={onChange}
       />
       <input 
         type ='text'
         name = 'age'
         placeholder = 'Smurfs Age'
+        value={formState.age}
+        onChange={onChange}
       />
       <input 
         type ='text'
         name = 'height'
         placeholder = 'Smurfs Height'
+        value={formState.height}
+        onChange={onChange}
       />
       <button type='submit'>Add Smurf</button>
     </form>
