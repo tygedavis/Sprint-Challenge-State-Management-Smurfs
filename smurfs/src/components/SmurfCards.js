@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { connect } from 'react-redux';
 
@@ -11,6 +11,9 @@ import { getSmurf } from '../actions';
 
 const SmurfCards = props => {
   
+  useEffect(() => {
+    props.getSmurf()
+  }, [props.smurf.length]) 
   // console.log('Props on SmurfCard(s)', props)
   return (
     <div>
