@@ -3,7 +3,7 @@ import React from 'react';
 const SmurfCard = props => {
   // console.log('Props on SmurfCard: ', props)
   return (
-    <div key={props.key}>
+    <div key={props.key} className='card' >
       <p>{props.smurf.name}</p>
       <p>{props.smurf.age}</p>
       <p>{props.smurf.height}</p>

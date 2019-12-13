@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-//Components
+//Component
 import SmurfCards from './SmurfCards';
 
 import "./App.css";
