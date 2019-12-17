@@ -30,7 +30,7 @@ export const reducer = (state = initialState, action) => {
       case POST_SMURF_SUCCESS:
         return {
           ...state,
-          smurf: [action.payload]
+          smurf: action.payload
         }
     default:
       return state
